@@ -1,5 +1,5 @@
+import Header from '@/components/core/header';
 import { Outlet } from 'react-router-dom';
-import Header from '../components/header';
 
 const DefaultLayout = () => {
   return (
