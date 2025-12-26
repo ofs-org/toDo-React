@@ -1,10 +1,17 @@
-import TaskInput from '../components/core/TaskInput';
+import Container from '@/components/core/container';
+import TaskInput from '@/components/core/task-input';
+import TaskList from '@/components/core/task-list';
+import TaskSummary from '@/components/core/task-summary';
 
 const Home = () => {
   return (
-    <main>
-      <TaskInput />
-    </main>
+    <div className="px-4">
+      <Container>
+        <TaskInput />
+        <TaskSummary />
+        <TaskList />
+      </Container>
+    </div>
   );
 };
 
