@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 const DefaultLayout = () => {
   return (
-    <div className="flex  flex-col container">
+    <div className="bg-base-600  h-screen">
       <Header />
       <Outlet />
     </div>
