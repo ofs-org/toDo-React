@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import type React from 'react';
 import Icon from './icon';
+import Skeleton from './skeleton';
 
 const buttonIconVariants = cva(
   'inline-flex items-center justify-center cursor-pointer transition-all group  ',
@@ -16,7 +17,7 @@ const buttonIconVariants = cva(
       },
       disabled: {
         false: '',
-        true: 'opacity-50 pointer-events-none',
+        true: 'opacity-90 pointer-events-none',
       },
     },
     defaultVariants: {
@@ -31,6 +32,7 @@ interface ButtonIconProps
   extends VariantProps<typeof buttonIconVariants>,
     Omit<React.ComponentProps<'button'>, 'size' | 'disabled'> {
   icon: React.ComponentProps<typeof Icon>['svg'];
+  loading?: boolean;
 }
 
 const ButtonIcon = ({
@@ -38,8 +40,12 @@ const ButtonIcon = ({
   disabled,
   className,
   icon,
+  loading,
   ...props
 }: ButtonIconProps) => {
+  if (loading) {
+    return <Skeleton className={buttonIconVariants({ size, className })} />;
+  }
   return (
     <button
       className={buttonIconVariants({ size, disabled, className })}
