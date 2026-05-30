@@ -1,4 +1,4 @@
-import { cva } from 'class-variance-authority';
+import { cva } from 'class-variance-authority'
 
 export const textVariants = cva('font-sans  inline-flex leading-[140%]', {
   variants: {
@@ -11,4 +11,4 @@ export const textVariants = cva('font-sans  inline-flex leading-[140%]', {
   defaultVariants: {
     variant: 'md',
   },
-});
+})

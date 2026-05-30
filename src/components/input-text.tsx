@@ -1,5 +1,5 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import type React from 'react';
+import { cva, type VariantProps } from 'class-variance-authority'
+import type React from 'react'
 
 const inputTextVariants = cva(
   'base-gray-500 text-base-300 border-transparent outline-none',
@@ -13,12 +13,12 @@ const inputTextVariants = cva(
       variant: 'md',
     },
   },
-);
+)
 
 interface inputTextProps
   extends React.ComponentProps<'input'>,
     VariantProps<typeof inputTextVariants> {
-  className?: string;
+  className?: string
 }
 
 const InputText = ({ className, ...props }: inputTextProps) => {
@@ -28,7 +28,7 @@ const InputText = ({ className, ...props }: inputTextProps) => {
       type="text"
       {...props}
     />
-  );
-};
+  )
+}
 
-export default InputText;
+export default InputText

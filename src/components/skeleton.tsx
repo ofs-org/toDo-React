@@ -1,5 +1,5 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import type React from 'react';
+import { cva, type VariantProps } from 'class-variance-authority'
+import type React from 'react'
 
 const skeletonVariants = cva(`animate-pulse bg-base-400 pointer-events-none `, {
   variants: {
@@ -12,7 +12,7 @@ const skeletonVariants = cva(`animate-pulse bg-base-400 pointer-events-none `, {
   defaultVariants: {
     rounded: 'lg',
   },
-});
+})
 
 interface SkeletonProps
   extends VariantProps<typeof skeletonVariants>,
@@ -23,7 +23,5 @@ export default function Skeleton({
   className,
   ...props
 }: SkeletonProps) {
-  return (
-    <div className={skeletonVariants({ rounded, className })} {...props} />
-  );
+  return <div className={skeletonVariants({ rounded, className })} {...props} />
 }

@@ -1,7 +1,7 @@
-import Text from '@/components/text';
-import { cva, type VariantProps } from 'class-variance-authority';
-import type React from 'react';
-import Skeleton from './skeleton';
+import { cva, type VariantProps } from 'class-variance-authority'
+import type React from 'react'
+import Text from '@/components/text'
+import Skeleton from './skeleton'
 
 const badgeVariants = cva(
   'rounded-full inline-flex items-center justify-center',
@@ -19,7 +19,7 @@ const badgeVariants = cva(
       size: 'sm',
     },
   },
-);
+)
 
 const textBadgeVariants = cva('', {
   variants: {
@@ -30,12 +30,12 @@ const textBadgeVariants = cva('', {
   defaultVariants: {
     variant: 'primary',
   },
-});
+})
 
 interface BadgeProps
   extends React.ComponentProps<'div'>,
     VariantProps<typeof badgeVariants> {
-  loading?: boolean;
+  loading?: boolean
 }
 
 const Badge = ({
@@ -47,7 +47,7 @@ const Badge = ({
   ...props
 }: BadgeProps) => {
   if (loading) {
-    return <Skeleton rounded="full" className="w-5 h-5" />;
+    return <Skeleton rounded="full" className="w-5 h-5" />
   }
   return (
     <div className={badgeVariants({ variant, size, className })} {...props}>
@@ -55,7 +55,7 @@ const Badge = ({
         {children}
       </Text>
     </div>
-  );
-};
+  )
+}
 
-export default Badge;
+export default Badge

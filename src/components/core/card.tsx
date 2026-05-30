@@ -1,5 +1,5 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import React from 'react';
+import { cva, type VariantProps } from 'class-variance-authority'
+import React from 'react'
 
 const cardVariants = cva(
   'rounded-lg border flex items-center  border-base-400 bg-base-500',
@@ -14,12 +14,12 @@ const cardVariants = cva(
       size: 'none',
     },
   },
-);
+)
 
 interface CardProps
   extends VariantProps<typeof cardVariants>,
     React.ComponentProps<'div'> {
-  as?: keyof React.JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements
 }
 export default function Card({
   as = 'div',
@@ -35,5 +35,5 @@ export default function Card({
       ...props,
     },
     children,
-  );
+  )
 }

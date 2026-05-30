@@ -1,10 +1,11 @@
-import logo from '@/assets/logo-toDo.svg';
+import Logo from '@/assets/logo-toDo.svg?react'
+
 const Header = () => {
   return (
     <header className="flex bg-base-700 items-center justify-center h-50">
-      <img width={126} height={48} src={logo} alt="" />
+      <Logo />
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

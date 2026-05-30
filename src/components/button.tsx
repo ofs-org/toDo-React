@@ -1,7 +1,7 @@
-import Text from '@/components/text';
-import { cva, type VariantProps } from 'class-variance-authority';
-import type React from 'react';
-import Icon from './icon';
+import { cva, type VariantProps } from 'class-variance-authority'
+import type React from 'react'
+import Text from '@/components/text'
+import Icon from './icon'
 
 const buttonVariants = cva(
   ' flex items-center transition-all rounded-lg cursor-pointer p-4',
@@ -23,13 +23,13 @@ const buttonVariants = cva(
       disabled: false,
     },
   },
-);
+)
 
 interface ButtonProps
   extends Omit<React.ComponentProps<'button'>, 'size' | 'disabled'>,
     VariantProps<typeof buttonVariants> {
-  children: React.ReactNode;
-  icon?: React.ComponentProps<typeof Icon>['svg'];
+  children: React.ReactNode
+  icon?: React.ComponentProps<typeof Icon>['svg']
 }
 
 const Button = ({
@@ -59,7 +59,7 @@ const Button = ({
       </Text>
       {IconComponent && <Icon className="fill-base-100" svg={IconComponent} />}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
