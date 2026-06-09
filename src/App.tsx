@@ -1,11 +1,7 @@
-import DefaultRoutes from "./routes";
+import DefaultRoutes from '@/routes/index'
 
 function App() {
-  return (
-    <>
-      <DefaultRoutes />
-    </>
-  );
+  return <DefaultRoutes />
 }
 
-export default App;
+export default App
