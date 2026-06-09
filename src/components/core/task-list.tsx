@@ -6,9 +6,10 @@ import { useState } from 'react'
 import Button from '../button'
 import InputText from '../input-text'
 import TaskItem from './task-item'
+import type { Task } from '@/models/task'
 
 const TaskList = () => {
-  const { tasks } = useTasks()
+  const { tasks, isLoadingTasks } = useTasks()
   const { createTask } = useTask()
   const [taskOnChange, setTaskOnChange] = useState('')
   const isNewComment = taskOnChange.length === 0
@@ -40,9 +41,15 @@ const TaskList = () => {
         </form>
       </section>
       <section className="h-64 overflow-y-auto mt-2 mb-2">
-        {tasks.map((item) => (
-          <TaskItem key={item.id} task={item} />
-        ))}
+        {!isLoadingTasks &&
+          tasks.map((item) => <TaskItem key={item.id} task={item} />)}
+        {isLoadingTasks && (
+          <>
+            <TaskItem task={{} as Task} loading />
+            <TaskItem task={{} as Task} loading />
+            <TaskItem task={{} as Task} loading />
+          </>
+        )}
       </section>
     </>
   )

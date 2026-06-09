@@ -3,20 +3,20 @@ import Badge from '../badge'
 import Text from '../text'
 
 const TaskSummary = () => {
-  const { concludedTaskCount, tasksCount } = useTasks()
+  const { concludedTaskCount, tasksCount, isLoadingTasks } = useTasks()
   return (
     <div className="flex mt-16 mb-16 justify-between">
       <div className="flex items-center gap-2">
         <Text variant="sm" className="font-bold text-blue" as="p">
           Tarefas Criadas
         </Text>
-        <Badge>{tasksCount}</Badge>
+        <Badge loading={isLoadingTasks}>{tasksCount}</Badge>
       </div>
       <div className="flex items-center gap-2">
         <Text className="text-purple font-bold" as="p">
           Concluídas
         </Text>
-        <Badge>
+        <Badge loading={isLoadingTasks}>
           {concludedTaskCount} de {tasksCount}
         </Badge>
       </div>
