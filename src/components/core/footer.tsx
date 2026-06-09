@@ -3,7 +3,7 @@ import Text from '../text'
 
 const Footer = () => {
   return (
-    <footer className="flex items-center gap-3 justify-center h-40">
+    <footer className="flex items-center gap-3  justify-center">
       <NavLink to="/">
         <Text variant={'sm'}>Home</Text>
       </NavLink>

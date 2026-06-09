@@ -26,6 +26,9 @@ importers:
       tailwindcss:
         specifier: ^4.1.18
         version: 4.1.18
+      use-local-storage:
+        specifier: ^3.0.0
+        version: 3.0.0(react@19.2.3)
     devDependencies:
       '@biomejs/biome':
         specifier: 2.4.16
@@ -1100,6 +1103,11 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
+  use-local-storage@3.0.0:
+    resolution: {integrity: sha512-wlPNnBCG3ULIJMr5A+dvWqLiPWCfsN1Kwijq+sAhT5yV4ex0u6XmZuNwP+RerIOfzBuz1pwSZuzhZMiluGQHfQ==}
+    peerDependencies:
+      react: '>=16.8.1'
+
   vite-plugin-svgr@4.5.0:
     resolution: {integrity: sha512-W+uoSpmVkSmNOGPSsDCWVW/DDAyv+9fap9AZXBvWiQqrboJ08j2vh0tFxTD/LjwqwAd3yYSVJgm54S/1GhbdnA==}
     peerDependencies:
@@ -1983,6 +1991,10 @@ snapshots:
       browserslist: 4.28.1
       escalade: 3.2.0
       picocolors: 1.1.1
+
+  use-local-storage@3.0.0(react@19.2.3):
+    dependencies:
+      react: 19.2.3
 
   vite-plugin-svgr@4.5.0(rollup@4.53.4)(typescript@5.9.3)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(lightningcss@1.30.2)):
     dependencies:
